@@ -11,8 +11,8 @@ spec:
   selector:
     matchLabels:
       app: demo-quatation-service
-  replicas: 2
-  minReadySeconds: 5
+  replicas: 1
+  minReadySeconds: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
