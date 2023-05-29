@@ -34,13 +34,13 @@ public class DemoController{
         return new ResponseEntity<HelloWorldResponse>(response, HttpStatus.OK);
     }
 
-    @Operation(summary = "QueryUser", description = "Swagger測試2")
-    @GetMapping(path = "/User/{seq}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HelloWorldResponse> queryUser(@PathVariable Integer seq) {
-
-        String msg = String.format("Hello! %s",   userMapping.get(seq));
-        HelloWorldResponse response = new HelloWorldResponse();
-        response.setMsg(msg);
-        return new ResponseEntity<HelloWorldResponse>(response, HttpStatus.OK);
-    }
+//    @Operation(summary = "QueryUser", description = "Swagger測試2")
+//    @GetMapping(path = "/User/{seq}", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<HelloWorldResponse> queryUser(@PathVariable Integer seq) {
+//
+//        String msg = String.format("Hello! %s",   userMapping.get(seq));
+//        HelloWorldResponse response = new HelloWorldResponse();
+//        response.setMsg(msg);
+//        return new ResponseEntity<HelloWorldResponse>(response, HttpStatus.OK);
+//    }
 }
