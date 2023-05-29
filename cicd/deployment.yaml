@@ -1,0 +1,62 @@
+--- #----------------Deployment ---------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: demo-quatation-service
+    enviroment: dev
+    tier:backend
+  name: demo-quatation-service
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: demo-quatation-service
+  replicas: 1
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: demo-quatation-service
+    spec:
+      containers:
+        - name: demo-quatation-service
+          image: botany7643/demo-quatation-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /quatation-service/swagger-ui/index.html
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /quatation-service/swagger-ui/index.html
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 60
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
+#---------------- Service ---------------
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: demo-quatation-service
+  name: demo-quatation-service-svc
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+  - name: demo-quatation-service-svc
+    port: 80
+    targetPort: 8080
+  selector:
+    app: demo-quatation-service
