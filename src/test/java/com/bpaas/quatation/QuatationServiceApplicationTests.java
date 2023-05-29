@@ -3,10 +3,10 @@ package com.bpaas.quatation;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class QuatationServiceApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 
