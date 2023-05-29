@@ -11,8 +11,8 @@ spec:
   selector:
     matchLabels:
       app: demo-quatation-service
-  replicas: 2
-  minReadySeconds: 3
+  replicas: 1
+  minReadySeconds: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -43,10 +43,10 @@ spec:
             periodSeconds: 8
           resources:
             requests:
-              memory: "200Mi"
+              memory: "500Mi"
               cpu: "400m"
             limits:
-              memory: "200Mi"
+              memory: "500Mi"
               cpu: "400m"
       restartPolicy: Always
       terminationGracePeriodSeconds: 10
