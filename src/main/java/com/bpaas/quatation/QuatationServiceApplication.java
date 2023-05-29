@@ -31,9 +31,9 @@ public class QuatationServiceApplication {
 	public void init() {
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 
-		log.info("*****************\n Spring boot application running in UTC timezone: "  + TimeZone.getDefault().getDisplayName(Locale.ENGLISH));
-		log.info("*****************\n Spring boot application running at " + new Date());
-		log.info(".....");
+//		log.info("*****************\n Spring boot application running in UTC timezone: "  + TimeZone.getDefault().getDisplayName(Locale.ENGLISH));
+//		log.info("*****************\n Spring boot application running at " + new Date());
+//		log.info(".....");
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(QuatationServiceApplication.class, args);
