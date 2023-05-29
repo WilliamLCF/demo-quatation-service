@@ -43,11 +43,11 @@ spec:
             periodSeconds: 8
           resources:
             requests:
-              memory: "500Mi"
-              cpu: "400m"
+              memory: "600Mi"
+              cpu: "500m"
             limits:
-              memory: "500Mi"
-              cpu: "400m"
+              memory: "600Mi"
+              cpu: "500m"
       restartPolicy: Always
       terminationGracePeriodSeconds: 10
 
